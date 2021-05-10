@@ -56,6 +56,16 @@ const stations = MTRUtil.getDisneylandResortLine();
 // etc...
 ```
 
+### **Use Enum**
+
+```ts
+import { IslandLine, SouthIslandLine } from 'hk-mtr-util';
+
+const oceanPark = SouthIslandLine.OCEAN_PARK;
+
+const central = IslandLine.CENTRAL;
+```
+
 ### **Type Definition**
 
 ```ts
