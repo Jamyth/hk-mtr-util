@@ -1,6 +1,6 @@
 {
     "name": "hk-mtr-util",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "dist/index.js",
     "license": "MIT",
     "scripts": {
@@ -12,6 +12,13 @@
     },
     "files": [
         "dist/**"
+    ],
+    "keywords": [
+        "MTR",
+        "Metro",
+        "typescript",
+        "HK",
+        "util"
     ],
     "devDependencies": {
         "@iamyth/logger": "1.0.4",
