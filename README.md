@@ -20,7 +20,9 @@ import { MTRUtil } from 'hk-mtr-util';
 const stations = MTRUtil.getKowloonLocation();
 // [KOWLOON, MONG_KOK, LAI_CHI_KOK, ...]
 
-const translatedStations = stations.map(MTRUtil.translate);
+const locale: 'en' | 'zh' = 'zh';
+
+const translatedStations = stations.map((_) => MTRUtil.translate(_, locale));
 // ["九龍", "旺角", "荔枝角", ...]
 ```
 
