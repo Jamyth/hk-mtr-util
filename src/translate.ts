@@ -13,7 +13,15 @@ import {
     WestRailLine,
 } from './type';
 
-export function translate(location: District): string {
+export function translate(location: District, locale: 'en' | 'zh'): string {
+    if (locale === 'zh') {
+        return translateZH(location);
+    } else {
+        return translateEn(location);
+    }
+}
+
+function translateZH(location: District): string {
     switch (location) {
         // Airport Express
         case AirportExpressLine.AIRPORT:
@@ -268,5 +276,263 @@ export function translate(location: District): string {
             return '兆康';
         case WestRailLine.TUEN_MUN:
             return '屯門';
+    }
+}
+
+function translateEn(location: District): string {
+    switch (location) {
+        // Airport Express
+        case AirportExpressLine.AIRPORT:
+            return 'Airport';
+        case AirportExpressLine.ASIS_WORLD_EXPO:
+            return 'AsiaWorld-Expo';
+        case AirportExpressLine.TSING_YI:
+            return 'Tsing Yi';
+        case AirportExpressLine.KOWNLOON:
+            return 'Kowloon';
+        case AirportExpressLine.HONG_KONG:
+            return 'Hong Kong';
+
+        // Disneyland Resort
+        case DisneylandResortLine.DISNEYLAND_RESORT:
+            return 'Disneyland Resort';
+        case DisneylandResortLine.SUNNY_BAY:
+            return 'Sunny Bay';
+
+        // East Rail
+        case EastRailLine.HUNG_HOM:
+            return 'Hung Home';
+        case EastRailLine.MONG_KOK_EAST:
+            return 'Mong Kok East';
+        case EastRailLine.KOWLOON_TONG:
+            return 'Kowloon Tong';
+        case EastRailLine.TAI_WAI:
+            return 'Tai Wai';
+        case EastRailLine.SHA_TIN:
+            return 'Sha Tin';
+        case EastRailLine.FO_TAN:
+            return 'Fo Tan';
+        case EastRailLine.RACECOURSE:
+            return 'Racecourse';
+        case EastRailLine.UNIVERSITY:
+            return 'University';
+        case EastRailLine.TAI_PO_MARKET:
+            return 'Tai Po Market';
+        case EastRailLine.TAI_WO:
+            return 'Tai Wo';
+        case EastRailLine.FANLING:
+            return 'Fanling';
+        case EastRailLine.SHEUNG_SHUI:
+            return 'Sheung Shui';
+        case EastRailLine.LO_WU:
+            return 'Lo Wu';
+        case EastRailLine.LOK_MA_CHAU:
+            return 'Lok Ma Chau';
+
+        // Island
+        case IslandLine.KENNEDY_TOWN:
+            return 'Kennedy Town';
+        case IslandLine.HKU:
+            return 'HKU';
+        case IslandLine.SAI_YING_PUN:
+            return 'Sai Ying Pun';
+        case IslandLine.SHEUNG_WAN:
+            return 'Sheung Wan';
+        case IslandLine.CENTRAL:
+            return 'Central';
+        case IslandLine.ADMIRALTY:
+            return 'Admiralty';
+        case IslandLine.WAN_CHAI:
+            return 'Wan Chai';
+        case IslandLine.CAUSEWAY_BAY:
+            return 'Causeway Bay';
+        case IslandLine.TIN_HAU:
+            return 'Tin Hau';
+        case IslandLine.FORTRESS_HILL:
+            return 'Fortress Hill';
+        case IslandLine.NORTH_POINT:
+            return 'North Point';
+        case IslandLine.QUARRY_BAY:
+            return 'Quarry Bay';
+        case IslandLine.TAI_KOO:
+            return 'Tai Koo';
+        case IslandLine.SAI_WAN_HO:
+            return 'Sai Wan Ho';
+        case IslandLine.SHAU_KEI_WAN:
+            return 'Shau Kei Wan';
+        case IslandLine.HENG_FA_CHUEN:
+            return 'Heng Fa Chuen';
+        case IslandLine.CHAI_WAN:
+            return 'Chai Wan';
+
+        // Kwun Tong
+        case KwunTongLine.WHAMPOA:
+            return 'Whampoa';
+        case KwunTongLine.HO_MAN_TIN:
+            return 'Ho Man Tin';
+        case KwunTongLine.YAU_MA_TEI:
+            return 'Yau Ma Tei';
+        case KwunTongLine.MONG_KOK:
+            return 'Mong Kok';
+        case KwunTongLine.PRINCE_EDWARD:
+            return 'Prince Edward';
+        case KwunTongLine.SHEK_KIP_MEI:
+            return 'Shek Kip Mei';
+        case KwunTongLine.KOWLOON_TONG:
+            return 'Kowloon Tong';
+        case KwunTongLine.LOK_FU:
+            return 'Lok Fu';
+        case KwunTongLine.WONG_TAI_SIN:
+            return 'Wong Tai Sin';
+        case KwunTongLine.DIAMOND_HILL:
+            return 'Diamond Hill';
+        case KwunTongLine.CHOI_HUNG:
+            return 'Choi Hung';
+        case KwunTongLine.KOWLOON_BAY:
+            return 'Kowloon Bay';
+        case KwunTongLine.NGAU_TAU_KOK:
+            return 'Ngau Tau Kok';
+        case KwunTongLine.KWUN_TONG:
+            return 'Kwun Tong';
+        case KwunTongLine.LAM_TIN:
+            return 'Lam Tin';
+        case KwunTongLine.YAU_TONG:
+            return 'Yau Tong';
+        case KwunTongLine.TIU_KENG_LENG:
+            return 'Tiu Keng Leng';
+
+        // South Island
+        case SouthIslandLine.ADMIRALTY:
+            return 'Admiralty';
+        case SouthIslandLine.OCEAN_PARK:
+            return 'Ocean Park';
+        case SouthIslandLine.WONG_CHUK_HANG:
+            return 'Wong CHuk';
+        case SouthIslandLine.LEI_TUNG:
+            return 'Lei Tung';
+        case SouthIslandLine.SOUTH_HORIZONS:
+            return 'South Horizons';
+
+        // Tseung Kwan O
+        case TseungKwanOLine.NORTH_POINT:
+            return 'North Point';
+        case TseungKwanOLine.QUARRY_BAY:
+            return 'Quarry Bay';
+        case TseungKwanOLine.YAU_TONG:
+            return 'Yau Tong';
+        case TseungKwanOLine.TIU_KENG_LENG:
+            return 'Tiu Keng Leng';
+        case TseungKwanOLine.TSEUNG_KWAN_O:
+            return 'Tseung Kwan O';
+        case TseungKwanOLine.HANG_HAU:
+            return 'Hang Hau';
+        case TseungKwanOLine.PO_LAM:
+            return 'Po Lam';
+        case TseungKwanOLine.LOHAS_PARK:
+            return 'Lohas Park';
+
+        // Tsuen Wan
+        case TsuenWanLine.CENTRAL:
+            return 'Central';
+        case TsuenWanLine.ADMIRALTY:
+            return 'Admiralty';
+        case TsuenWanLine.TSIM_SHA_TSUI:
+            return 'Tsim Sha Tsui';
+        case TsuenWanLine.JORDAN:
+            return 'Jordan';
+        case TsuenWanLine.YAU_MA_TEI:
+            return 'Yau Ma Tei';
+        case TsuenWanLine.MONG_KOK:
+            return 'Mong Kok';
+        case TsuenWanLine.PRINCE_EDWARD:
+            return 'Price Edward';
+        case TsuenWanLine.SHAM_SHUI_PO:
+            return 'Sham Shui Po';
+        case TsuenWanLine.CHEUNG_SHA_WAN:
+            return 'Cheung Sha Wan';
+        case TsuenWanLine.LAI_CHI_KOK:
+            return 'Lai Chi Kok';
+        case TsuenWanLine.MEI_FOO:
+            return 'Mei Foo';
+        case TsuenWanLine.LAI_KING:
+            return 'Lai King';
+        case TsuenWanLine.KWAI_FONG:
+            return 'Kwai Fong';
+        case TsuenWanLine.KWAI_HING:
+            return 'Kwai Hing';
+        case TsuenWanLine.TAI_WO_HAU:
+            return 'Tai Wo Hau';
+        case TsuenWanLine.TSUEN_WAN:
+            return 'Tsuen Wan';
+
+        // Tuen Ma Line Phase One
+        case TuenMaLinePhaseOne.KAI_TAK:
+            return 'Kai Tak';
+        case TuenMaLinePhaseOne.DIAMOND_HILL:
+            return 'Diamond Hill';
+        case TuenMaLinePhaseOne.HIN_KENG:
+            return 'Hin Keng';
+        case TuenMaLinePhaseOne.TAI_WAI:
+            return 'Tai Wai';
+        case TuenMaLinePhaseOne.CHE_KUNG_TEMPLE:
+            return 'Che Kung Temple';
+        case TuenMaLinePhaseOne.SHA_TIN_WAI:
+            return 'Sha Tin Wai';
+        case TuenMaLinePhaseOne.CITY_ONE:
+            return 'City One';
+        case TuenMaLinePhaseOne.SHEK_MUN:
+            return 'Shek Mun';
+        case TuenMaLinePhaseOne.TAI_SHUI_HANG:
+            return 'Tai Shui Hang';
+        case TuenMaLinePhaseOne.HENG_ON:
+            return 'Heng On';
+        case TuenMaLinePhaseOne.MA_ON_SHAN:
+            return 'Ma On Shan';
+        case TuenMaLinePhaseOne.WU_KAI_SHA:
+            return 'Wu Kai Sha';
+
+        // Tung Chung
+        case TungChungLine.HONG_KONG:
+            return 'Hong Kong';
+        case TungChungLine.KOWLOON:
+            return 'Kowloon';
+        case TungChungLine.OLYMPIC:
+            return 'Olympic';
+        case TungChungLine.NAM_CHEONG:
+            return 'Nam Cheong';
+        case TungChungLine.LAI_KING:
+            return 'Lai King';
+        case TungChungLine.TSING_YI:
+            return 'Tsing Yi';
+        case TungChungLine.SUNNY_BAY:
+            return 'Sunny Bay';
+        case TungChungLine.TUNG_CHUNG:
+            return 'Tung Chung';
+
+        // West Rail
+        case WestRailLine.HUNG_HOM:
+            return 'Hung Hom';
+        case WestRailLine.EAST_TSIM_SHA_TSUI:
+            return 'East Tsun Sha Tsui';
+        case WestRailLine.AUSTIN:
+            return 'Austin';
+        case WestRailLine.NAM_CHEONG:
+            return 'Nam Cheong';
+        case WestRailLine.MEI_FOO:
+            return 'Mei Foo';
+        case WestRailLine.TSUEN_WAN_WEST:
+            return 'Tsuen Wan West';
+        case WestRailLine.KAM_SHEUNG_ROAD:
+            return 'Kam Sheung Road';
+        case WestRailLine.YUEN_LONG:
+            return 'Yuen Long';
+        case WestRailLine.LONG_PING:
+            return 'Long Ping';
+        case WestRailLine.TIN_SHUI_WAI:
+            return 'Tin Shui Wai';
+        case WestRailLine.SIU_HONG:
+            return 'Siu Hong';
+        case WestRailLine.TUEN_MUN:
+            return 'Tuen Mun';
     }
 }
